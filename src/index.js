@@ -1,3 +1,139 @@
 console.log(data);
 
 // WRITE YOUR CODE BELOW!
+
+// - Render the top list of dogs using the list item template you'll find on the HTML file
+// - Each list item should be clickable. When you click on an item, the selected dog should display on the main card
+// - The main card should contain all the information from the selected dog. Follow the template for the main card that you'll find on the HTML file.
+// - There should be only one card at the time on the screen
+// - The card should have a button that toggles for the selected dog between good dog/ bad dog
+
+// Tips
+// - Take advantage of scope in JS to have access to the data you need
+// - Remember you can add event listeners to any element on the page
+
+
+
+
+//Create bridge (using the ul class)
+const bridge = document.querySelector(".dogs-list");
+
+// 1 - Render a function for the <ul class="dogs-list"> 
+//1.1 - input - array / output - string "name".
+
+function renderListDogs(array){
+
+for (let i = 0; i < array.length; i++) {
+ const name = array[i].name;
+
+   const liEl = document.createElement("li");
+   liEl.className = "dogs-list__button";
+   liEl.innerText = `${name}`;
+   
+//    liEl.addEventListener("click", displayCard);
+
+   bridge.append(liEl);
+   
+}
+return bridge;
+}
+
+const dogosList = renderListDogs(data);
+console.log(dogosList);
+
+//2 create card for each dog
+//2.1 use function+loop to generate all the cards
+// input - array / output - objt.
+
+const bridgeTwo = document.querySelector(".main__dog-section");
+
+
+let answer = "";
+function renderAnswer(objt){
+if (String(objt.isGoodDog) === "false") {
+  answer = "Yes";
+} else{
+    answer = "No";
+}
+return answer;
+}
+// const testing = renderAnswer(data[0]);
+// console.log(testing);
+
+
+let buttonGoodBadDog = "";
+function renderButton(objt){
+if (String(objt.isGoodDog) === "true")  {
+  buttonGoodBadDog = "Good dog ♡ ";
+} else{
+    buttonGoodBadDog = "Bad dog";
+}
+return buttonGoodBadDog;
+}
+// const testing = renderButton(data[0]);
+// console.log(testing);
+
+
+function renderCard(objt){
+
+    const nameDogo = objt.name;
+   const nameDog = document.createElement("h2"); 
+   nameDog.innerText = nameDogo;
+
+bridgeTwo.append(nameDog);
+
+   const imgEl = document.createElement("img");
+   imgEl.setAttribute("height", "300");
+   imgEl.setAttribute("width", "400");
+
+   const imgSrc = objt.image;
+   imgEl.setAttribute("src" , imgSrc);
+
+bridgeTwo.append(imgEl);
+
+const divEl = document.createElement("div");
+divEl.className = "main__dog-section__desc";
+
+const bio = document.createElement("h3");
+bio.innerText = "Bio";
+
+const about = document.createElement("p");
+about.innerText = objt.bio;
+
+divEl.append(bio);
+divEl.append(about);
+bridgeTwo.append(divEl);
+
+const divEle = document.createElement("div");
+divEle.className = "main__dog-section__btn";
+
+const goodDog = renderAnswer(objt);
+
+let question = document.createElement("p");
+question.innerText = `${"Is naughty?"} ${goodDog}`; 
+
+divEle.append(question);
+
+let buttonGoodBadDogs = renderButton(objt);
+
+const button = document.createElement("button");
+button.innerText = `${buttonGoodBadDogs}`;
+
+divEle.append(button);
+
+bridgeTwo.append(divEle);
+
+return bridgeTwo;
+
+
+}
+
+const test = renderCard(data[2]);
+console.log(test);
+
+
+// function for the Event Listener
+
+// function displayCard() {
+//   document.getElementsByClassName(".main__dog-section").innerHTML = "Hello";
+// }

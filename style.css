@@ -17,7 +17,7 @@ body {
   font-family: sans-serif;
   color: var(--dark-text);
   background-color: var(--white);
-  overflow: hidden;
+
 }
 
 img {
@@ -66,6 +66,8 @@ img {
   border: 1px solid var(--dark-text);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: grid;
+ justify-items: center;
 }
 
 .form {
@@ -122,7 +124,7 @@ img {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 3fr 2fr;
-  width: 80%;
+  width: 90%;
 }
 
 .main__dog-section__desc {
