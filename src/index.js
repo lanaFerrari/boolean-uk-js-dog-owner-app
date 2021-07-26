@@ -36,10 +36,7 @@ for (let i = 0; i < array.length; i++) {
 liEl.addEventListener("click", () =>{renderCard(array[i])
 });
 
-// function for the Event Listener
-
    bridge.append(liEl);
-   
 }
 return bridge;
 }
@@ -47,11 +44,25 @@ return bridge;
 const dogosList = renderListDogs(data);
 console.log(dogosList);
 
+//* target li(add button) + event listener
+
+const bridgeButtonPlus = document.querySelector(".dogs-list__button--add");
+// bridgeButtonPlus.addEventListener("click", () =>{renderCard(array[i])
+// });
+
+
+
+// Create function - form
+const bridgeTwo = document.querySelector(".main__dog-section");
+
+function renderForm(){
+   const tittle = document.createElement
+}
+
+
 //2 create card for each dog
 //2.1 use function+loop to generate all the cards
 // input - array / output - objt.
-
-const bridgeTwo = document.querySelector(".main__dog-section");
 
 
 let answer = "";
@@ -124,8 +135,11 @@ divEle.append(question);
 
 let buttonGoodBadDogs = renderButton(objt);
 
-const button = document.createElement("button");
-button.innerText = `${buttonGoodBadDogs}`;
+let button = document.createElement("button");
+button.innerText = "Click here";
+// button.innerText = `${buttonGoodBadDogs}`;
+
+ button.addEventListener("click", () =>{button.innerText = renderButton(objt)});
 
 divEle.append(button);
 
