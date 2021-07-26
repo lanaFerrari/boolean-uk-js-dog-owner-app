@@ -30,7 +30,13 @@ for (let i = 0; i < array.length; i++) {
    liEl.className = "dogs-list__button";
    liEl.innerText = `${name}`;
    
-//    liEl.addEventListener("click", displayCard);
+
+   // function for the Event Listener
+
+liEl.addEventListener("click", () =>{renderCard(array[i])
+});
+
+// function for the Event Listener
 
    bridge.append(liEl);
    
@@ -75,6 +81,8 @@ return buttonGoodBadDog;
 
 
 function renderCard(objt){
+
+bridgeTwo.innerHTML = "";
 
     const nameDogo = objt.name;
    const nameDog = document.createElement("h2"); 
@@ -128,12 +136,6 @@ return bridgeTwo;
 
 }
 
-const test = renderCard(data[2]);
-console.log(test);
+// const test = renderCard(data[2]);
+// console.log(test);
 
-
-// function for the Event Listener
-
-// function displayCard() {
-//   document.getElementsByClassName(".main__dog-section").innerHTML = "Hello";
-// }
