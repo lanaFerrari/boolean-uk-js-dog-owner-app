@@ -53,10 +53,38 @@ const bridgeButtonPlus = document.querySelector(".dogs-list__button--add");
 
 
 // Create function - form
-const bridgeTwo = document.querySelector(".main__dog-section");
+let bridgeTwo = document.querySelector(".main__dog-section");
+
+const dogLi = document.querySelector(".dogs-list__button--add");
+
+dogLi.addEventListener("click", () =>{renderCard(array[0])
+});
+
+// dogLi.addEventListener("submit", (event) => {renderForm();
 
 function renderForm(){
-   const tittle = document.createElement
+
+   const tittleForm = document.createElement("h2");
+   tittleForm.innerText = "Add your dog to the list"
+
+   const divForm = document.createElement("form");
+   divForm.className = "create-user-form";
+
+   const dogNameInput = createUserForm.createElement("input");
+   dogNameInput.setAttribute("type" , "text");
+   dogNameInput.setAttribute("id" , "username");
+   dogNameInput.setAttribute("placeholder" , "Type your dog's name");
+
+   divForm.append(dogNameInput);
+
+    const submitButton = createUserForm.createElement("button");
+    submitButton.setAttribute("type" , "submit");
+
+    divForm.append(submitButton);
+
+    bridgeTwo.append(divForm);
+
+    return bridgeTwo;
 }
 
 
